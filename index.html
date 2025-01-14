@@ -1,12 +1,61 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Penguiner wants to say hello</title>
-	<meta name="description" content="Our first page">
-	<meta name="keywords" content="html tutorial template">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PENGUINER SAYS HI</title>
+  
+  <!-- Include Confetti.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Style for the page -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      margin-top: 50px;
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    img {
+      margin-top: 30px;
+      width: 80%;
+      max-width: 500px;
+    }
+  </style>
 </head>
 <body>
-	hi gracie!!
+
+  <h1>hi gracie!!</h1>
+  <p>i wanted to say hello</p>
+  
+  <!-- Your Image -->
+<img src="https://live.staticflickr.com/65535/54265558809_1702f8eadc_k.jpg" width="1536" height="2048" alt="ITS PENGUINER!"/>
+
+  <script>
+    // Wait until the page has fully loaded
+    window.onload = function() {
+      // Fire the confetti effect for 2 seconds
+      setTimeout(function() {
+        confetti({
+          particleCount: 200,
+          angle: 90,
+          spread: 50,
+          origin: { y: 0.6 }  // Confetti falls from the top, a bit lower than the page's top edge
+        });
+      }, 500);  // Start after 0.5 seconds delay for better user experience
+    };
+  </script>
+
 </body>
-	<a title="PENGUINER SAYS HI"><img src="https://live.staticflickr.com/65535/54265558809_1702f8eadc_k.jpg" width="1536" height="2048" alt="ITS PENGUINER!"/></a>
 </html>
