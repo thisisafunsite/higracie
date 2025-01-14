@@ -44,21 +44,31 @@
 <img src="https://live.staticflickr.com/65535/54265558809_1702f8eadc_k.jpg" width="1536" height="2048" alt="ITS PENGUINER!"/>
 
   <script>
-    let duration = 3000; // Total time for the effect in milliseconds (5 seconds)
-    let end = Date.now() + duration;
     // Wait until the page has fully loaded
     window.onload = function() {
-      // Fire the confetti effect for 2 seconds
-      setTimeout(function() {
+      let duration = 3000; // Total time for confetti in milliseconds (3 seconds)
+      let end = Date.now() + duration;
+
+      // Function to create continuous bursts of confetti
+      (function frame() {
         confetti({
-          particleCount: 100,
-          angle: 90,
-          spread: 50,
-          origin: { y: 0.4 }  // Confetti falls from the top, a bit lower than the page's top edge
+          particleCount: 7, // Adjust particle count for each burst
+          angle: 60,
+          spread: 70,
+          origin: { x: 0 } // Confetti starts on the left
         });
-      }, 500);  // Start after 0.5 seconds delay for better user experience
+        confetti({
+          particleCount: 7,
+          angle: 120,
+          spread: 70,
+          origin: { x: 1 } // Confetti starts on the right
+        });
+
+        // Repeat the confetti effect as long as the current time is less than the end time
         if (Date.now() < end) {
-          requestAnimationFrame(frame);
+          requestAnimationFrame(frame); // Request the next animation frame
+        }
+      })();
     };
   </script>
 
